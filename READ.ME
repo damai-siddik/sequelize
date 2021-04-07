@@ -1,0 +1,68 @@
+// 1. instal module2 terlebih , kemudian module sequelize dan sequelize-cli
+$ npm install --save-dev sequelize
+$ npx sequelize-cli init
+
+// 2. ubah dan sesuaikan config
+{
+  "development": {
+    "username": "cd",
+    "password": "root",
+    "database": "harvest_moon",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "endy",
+    "password": "root",
+    "database": "harvest_moon",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "endy",
+    "password": "root",
+    "database": "harvest_moon",
+    "host": "localhost",
+    "dialect": "postgres"
+  }
+}
+
+// 3. create model, type in terminal vscode:
+npx sequelize-cli model:generate --name User --attributes firstName:string,lastName:string,email:string
+
+npx sequelize-cli model:generate --name Farm --attributes name:string,address:string,userId:integer,animalId:integer
+
+npx sequelize-cli model:generate --name Animal --attributes name:string,age:integer,farmId:integer,healthStatus:string
+
+// 4. Menambah table di pgadmin
+$ npx sequelize-cli db:migrate
+
+// u/ menghapus, (yang akan terhapus adalah table yang terakhir dimasukkan (step 3))
+$ npx sequelize-cli db:migrate:undo
+
+// 5. CReating the first seed, user >> nama model
+$ npx sequelize-cli seed:generate --name demo-user
+atau
+$ npx sequelize-cli seed:generate --name user-dummy
+
+// 6. edit semua seeder
+
+// 7. run
+$ npx sequelize-cli db:seed:all
+  see at table in pgadmin >> refresh
+
+// 8. buat express di index.js
+
+
+
+
+
+
+
+
+note:
+- untuk bantuan, type >> sequelize-cli --help
+
+pada seeder ada file kosong yang berisi:
+- up: untuk isi data ke database
+- down untuk menghapus lagi datanya

@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "damai",
+    "password": "glints",
+    "database": "binar",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "damai",
+    "password": "glints",
+    "database": "binar",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "damai",
+    "password": "glints",
+    "database": "binar",
+    "host": "localhost",
+    "dialect": "postgres"
+  }
+}
